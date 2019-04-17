@@ -17,5 +17,20 @@ add cupo_limitado int
 alter table carrera 
 drop column cupo_limitado
 
+/* Campos calculados */
+
+alter table carrera add cupo_minimo int
+
+alter table carrera add cupo_limitado int 
+
+/* Procedimientos almacenados */
+
+alter table carrera add Resta as (cupo_minimo + 100) /* Se agrega nuevo campo resta automaticamente*/
+
+alter table carrera add Suma as (cupo_limitado - 100) /* Se agrega nuevo campo suma automaticamente*/
+
+ 
+
+
 
 
